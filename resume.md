@@ -11,7 +11,7 @@ published: true
 Newark, DE 19713
 - resume@mechinn.com
 - 1 (609) 736-0414
-- http://mechinn.com
+- [http://mechinn.com](http://mechinn.com)
 
 ## EDUCATION
 
