@@ -47,9 +47,9 @@ Newark, DE 19713
 
 ### SevOne, Inc. Internship program, May 2011 – August 2011, January 2012 – February 2012
 
-- Of the 50 total developers, I and a handful of others are part of the maintenance team where we went through code currently on customer’s computers and fixed problems and made improvements.
+- Of the 50 total developers, I and a handful of others were part of the maintenance team where we went through code currently on customers' servers and fixed problems and made improvements.
 - On the job I learned advanced uses of HTML, PHP, Javascript, JQuery, AJAX and JSON.
-- I have worked on many high priority defects which were hot-patched on customer’s products.
+- I worked on many high priority defects which were hot-patched on customer’s products.
 
 ## VOLUNTEERING
 
