@@ -25,7 +25,7 @@ Newark, DE 19713
 
 - I stayed with the same team I did my 3rd and final rotation with.
 - I helped manage the Datamover project which gave the Disaster Recovery database a 24 hour return to operation.
-- Afer the Datmover project was complete the code was handed from Teradata to my team which I help maintain and enhance through various performance fixes.
+- After the Datamover project was complete the code was handed from Teradata to my team which I help maintain and enhance through various performance fixes.
 - I also rewrote the visual basic for applications code in an excel sheet which was used as a template to create jobs for the Datamover Project.
 
 ### JPMorgan Chase & Co. Technology Program Analyst, July 2012 – July 2014
@@ -36,12 +36,12 @@ Newark, DE 19713
 - I completely rewrote the project's scheduled batch jobs translating them from C# to Java to align with the team's expertise and designing a library to make creating new jobs in the future easy.
 
 #### Service Delivery
-- I workd with the Application Development and Infrastructure teams to make sure that Mortgage Banking's Information Management applications are all working
+- I worked with the Application Development and Infrastructure teams to make sure that Mortgage Banking's Information Management applications are all working
 - I contributed information to monthly Service Delivery Reviews which were reviewed by the CIO of Mortgage Banking and his directors
 - I reviewed many Change Requests to make sure unclear and/or incorrect implementations were put into Production
 
 #### Teradata Database Administrator
-- I was introduced to Teradata by being part of the Run the Engine team which works on maintaining the Databases though support ticket resoultion and actively monitoring the system for issues.
+- I was introduced to Teradata by being part of the Run the Engine team which works on maintaining the Databases though support ticket resolution and actively monitoring the system for issues.
 - I was then moved to a new Engineering Team where I was first tasked with rewriting the Backup solution around TARA for the Production Database
 - I was then tasked with creating a process and automating as much as possible to restore the full backups of the database that were done once a week and restore them into the Disaster Recovery environment as a temporary process until the project that was creating a 24 hour SLA process to keep DR in sync using Unity Datamover.
 
