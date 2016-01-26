@@ -7,8 +7,8 @@ published: true
 
 # Michael Edward Chinn
 
-**800 Village Cir Apt B, Newark, DE 19713**  
-**Email:** [resume@mechinn.com](mailto:resume@mechinn.com) \| **Cell:** 1 (302) 750-8546 \| **Web:** [http://mechinn.com](http://mechinn.com)
+800 Village Cir Apt B, Newark, DE 19713  
+Email: [resume@mechinn.com](mailto:resume@mechinn.com) \| Cell: 1 (302) 750-8546 \| Web: [http://mechinn.com](http://mechinn.com)
 
 ## EXPERIENCE
 
