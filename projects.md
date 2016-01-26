@@ -21,7 +21,7 @@ published: true
   - Zach Schiavo
   - Chase Cotton
 
-## [Teaching and Lab Assistant Scheduling System](/files/TLASS.zip)
+## [Teaching and Lab Assistant Scheduling System]({{ site.url }}/files/TLASS.zip)
 - For use in the Computer Science Department so this task does not need to be done by hand anymore.
 - Completed: Fall 2011
 - Programming Language: Java & PHP,Javascript,HTML
@@ -33,7 +33,7 @@ published: true
   - Etornam Banini
   - William Greenhalgh
 
-## [Swamp Simulation](/files/swampSimulation.zip)
+## [Swamp Simulation]({{ site.url }}/files/swampSimulation.zip)
 - My first large software engineering project.
 - Completed: Spring 2011
 - Programming Language: Java
@@ -45,7 +45,7 @@ published: true
   - Matthew Puterio
   - Ryan Richardson
 
-## [Linux/Solaris Shell](/files/mechinn_proj2.tar.bz2)2
+## [Linux/Solaris Shell]({{ site.url }}/files/mechinn_proj2.tar.bz2)
 - Shell for use on linux or Solaris.
 - Completed: Spring 2011
 - Programming Language: C
