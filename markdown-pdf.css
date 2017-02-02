@@ -1,7 +1,0 @@
-body {
-    font-size: 0.75em;
-}
-
-@media print {
-    a[href]:after { content : "" }
-}
