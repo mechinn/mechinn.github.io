@@ -7,11 +7,11 @@ published: true
 
 # Michael Edward Chinn
 
-32 Phoenix Ave  
-Newark, DE 19702  
-[resume@mechinn.com](mailto:resume@mechinn.com)  
-1 (302) 750-8546  
-[http://mechinn.com](http://mechinn.com)  
+32 Phoenix Ave
+Newark, DE 19702
+[resume@mechinn.com](mailto:resume@mechinn.com)
+1 (302) 750-8546
+[http://mechinn.com](http://mechinn.com)
 
 Software Engineer with 4+ years of experience. Quick to adapt to new challenges and learn new technical skills as needed. Work produced with a high attention to detail and always trying to do the right thing. Always willing to assist surrounding coworkers through problems and brainstorm ideas. Continuing to develop interpersonal and leadership skills as early career progresses and new opportunities arrive.
 
@@ -21,8 +21,9 @@ Software Engineer with 4+ years of experience. Quick to adapt to new challenges 
 - Primarily worked on large scale orchestration of backups and disaster recovery solution for our Teradata Data Warehouse.
 - Created common libraries for our team to use for consistent access to our password vault and automated alert ticketing.
 - Created various small automation scripts for maintenance or data extract, transforming, and loading (ETL).
-- Currently leading multiple projects, one of which is adding simplicity for users submitting metadata about objects to be backed up and copied to the DR system.
+- Lead a project adding simplicity for users submitting metadata about objects to be backed up and copied to the DR system.
 - Started the team's agile workflow process and educated support teams how to engage us with new ideas and bug reports.
+- Currently working on an individual project to meet audit requirements keeping inventory of linux users across 100+ servers without modifying SUSE's default Linux Pluggable Authentication Modules (PAM).
 - Throughout position involved in all phases of project life cycles: Design, Build, Test, Implementation, Support, and Maintenance.
 
 ### JPMorgan Chase & Co. Technology Program Analyst, July 2012 – July 2014
