@@ -5,17 +5,15 @@ permalink: /resume/
 published: true
 ---
 
-<h1 align="center">Michael Edward Chinn</h1>
+# Michael Edward Chinn
 
-<p align="center">
-  800 Village Cir Apt B  
-  Newark, DE 19713  
-  [resume@mechinn.com](mailto:resume@mechinn.com)  
-  1 (302) 750-8546  
-  [http://mechinn.com](http://mechinn.com)
-</p>
+32 Phoenix Ave
+Newark, DE 19702
+[resume@mechinn.com](mailto:resume@mechinn.com)
+1 (302) 750-8546
+[http://mechinn.com](http://mechinn.com)
 
-Software Engineer with 4+ years of experience. Quick to adapt to new challenges and learn new technical skills as needed. Work produced with a high attention to detail and always trying to do the right thing. Willing to assist surrounding coworkers through problems and brainstorm ideas. Continuing to develop interpersonal and leadership skills as early career progresses and new opportunities arrive.
+Software Engineer with 4+ years of experience. Quick to adapt to new challenges and learn new technical skills as needed. Work produced with a high attention to detail and always trying to do the right thing. Always willing to assist surrounding coworkers through problems and brainstorm ideas. Continuing to develop interpersonal and leadership skills as early career progresses and new opportunities arrive.
 
 ## Experience
 
@@ -50,7 +48,7 @@ Software Engineer with 4+ years of experience. Quick to adapt to new challenges 
 - Defects ranged in severity between fixing a superficial wording mistake within the application to creating a hot patch for an issue affecting a customer's production system.
 
 ## Education
-Bachelor of Science in Computer Science from the University of Delaware in 2012.  
+Bachelor of Science in Computer Science from the University of Delaware in 2012.
 Overall GPA: 3.1, Computer Science GPA: 3.4.
 
 ## Skills
@@ -60,13 +58,13 @@ Overall GPA: 3.1, Computer Science GPA: 3.4.
 - Source Control: git, mercurial (hg), svn
 - Team Collaboration: Atlassian JIRA, Confluence, Bitbucket Server, Microsoft SharePoint
 - Data Structures: JSON, XML, YAML
-- Android, Linux, Proxmox, KVM Virtualization, LXC, Docker
+- Android, Linux, Proxmox, Kernel-Based Virtual Machine (KVM), Linux Containers (LXC), Docker
 - nginx, apache, tomcat, ssh
 
 ## Volunteering
 ### FIRST Robotics Competition Mentor, 2009-2015
 - Taught students on the team how to wire the required components and program the drive and autonomous code for the robot.
 - Guided students as needed on how to troubleshoot problems with electrical components and software bugs in tense environments where they were working against the clock during competition.
-- Gave advise to students when asked about planning college and their careers.
+- Gave advice to students when asked about planning college and their careers.
 
 [Download PDF Version]({{ site.url }}/files/Michael%20Edward%20Chinn%20Resume.pdf)
