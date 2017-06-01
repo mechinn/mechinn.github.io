@@ -1,48 +1,93 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
 # Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
 title: Michael Chinn
 email: web@mechinn.com
 description: > # this means to ignore newlines until "baseurl:"
   Where I put my contributions to the internet
-url: "http://mechinn.com"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://mechinn.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: mechinn
 github_username:  mechinn
 
 # Where things are
-destination: ./_site
-plugins:     ./_plugins
-layouts:     ./_layouts
-data_source: ./_data
-collections: null
+source: . #Cannot change
+destination:  ./_site
+plugins_dir:  _plugins
+layouts_dir:  _layouts
+data_dir:     _data
+includes_dir: _includes
+collections:
+  posts:
+    output:   true
 
 # Handling Reading
-include:      [".htaccess"]
-exclude:      []
-keep_files:   [".git", ".svn", "files"]
-encoding:     "utf-8"
+safe: true #cannot change
+include:
+  - .htaccess
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+keep_files:
+  - .git
+  - .svn
+  - files
+encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+strict_front_matter: false
 
 # Filtering Content
 show_drafts: null
 limit_posts: 0
-future:      true
+future:      false
 unpublished: false
 
 # Plugins
 whitelist: []
-gems:      []
+gems:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-redirect-from
+  - jekyll-gist
+  - jekyll-paginate
+  - jekyll-relative-links
+  - jekyll-optional-front-matter
+  - jekyll-coffeescript
+  - jekyll-readme-index
+  - jekyll-default-layout
+  - jekyll-titles-from-headings
 
 # Conversion
-markdown:    kramdown
-highlighter: rouge
+markdown: kramdown
+highlighter: rouge #cannot change
+lsi: false # cannot change
 excerpt_separator: "\n\n"
-kramdown:
-  input: GFM
+incremental: false #cannot change
 
 # Serving
 detach:  false
 port:    4000
 host:    127.0.0.1
 baseurl: "" # does not include hostname
+show_dir_listing: false
 
 # Outputting
 permalink:     date
@@ -50,7 +95,11 @@ paginate_path: /page:num
 timezone:      null
 
 quiet:    false
+verbose:  false
 defaults: []
+
+liquid:
+  error_mode: warn
 
 # Markdown Processors
 rdiscount:
@@ -61,21 +110,17 @@ redcarpet:
 
 kramdown:
   auto_ids:       true
-  footnote_nr:    1
   entity_output:  as_char
   toc_levels:     1..6
   smart_quotes:   lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false
+  input:          GFM
+  hard_wrap:      false
+  footnote_nr:    1
+  math_engine: mathjax #cannot change
 
-  coderay:
-    coderay_wrap:              div
-    coderay_line_numbers:      inline
-    coderay_line_number_start: 1
-    coderay_tab_width:         4
-    coderay_bold_every:        10
-    coderay_css:               style
+theme: jekyll-theme-minimal
 
-# github.io required
-safe: true
-lsi: false
-source: .
+#github cannot change
+gist:
+  noscript: false
+

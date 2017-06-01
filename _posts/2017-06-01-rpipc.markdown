@@ -1,0 +1,49 @@
+---
+layout: post
+title:  "Ubuntu MAAS Raspberry Pi Power Control"
+date:   2017-06-01 00:00:00
+categories: blog
+---
+###### This is for MAAS Version 2.1.5+bzr5596-0ubuntu1 (16.04.1)
+
+Over the past few years I have been playing with some old desktops at home and turning them into a [/r/homelab](https://www.reddit.com/r/homelab/).
+My problem is that I don't really want to go walk over to the servers every time I break something and need to do a hard reset on them.
+I started doing some research into it and learned that many enterprise servers have the ability to control their power remotely through some kind of API
+and it got me thinking if there was something I could do at home that didnt involve me buying an old enterprise server.
+I stumbled upon this [blog post](https://insights.ubuntu.com/2015/09/23/pc-power-control-with-a-raspberry-pi-and-maas/) which gave pretty awesome instructions of how to control the pins on a motherboard using a relay and a raspberry pi so I followed the hardware instructions and whipped up a little python script similar to what they built for MAAS but using the official GPIO library.
+A year later I actually started playing with MAAS and went back to the article and tried following the instructionsof how to make MAAS play with the raspberry pi to have it automatically control the server power.
+The problem is that Canonical completely rewrote how MAAS does power control since that article was written, so the way they added their own custom driver wasnt valid anymore.
+I was already done with my circuit and my REST API so I figured why not go poking around in the MAAS source code and see where the built in power control drivers are and how they work now in version 2.1.5.
+Here is a tutorial of what you need to do to make MAAS work with a Raspberry Pi Power Controller.
+
+First go build the circuit that Canonical describes, it works very well and the parts aren't expensive: [https://insights.ubuntu.com/2015/09/23/pc-power-control-with-a-raspberry-pi-and-maas/](https://insights.ubuntu.com/2015/09/23/pc-power-control-with-a-raspberry-pi-and-maas/). Once you get to the Software section stop and come back here.
+
+First on the Raspberry Pi you'll need to setup my rpipc tool, I usually clone it to /opt/rpipc. [https://github.com/mechinn/rpipc](https://github.com/mechinn/rpipc)
+
+Configure a rpipc.json which you can base off of the rpipc.json.example, remember the names you give your sets you'll need them once you're done and configuring your MAAS machines.
+
+You'll need gunicorn to run the server:api as a service
+
+Next lets copy the /opt/rpipc/maas/rpipc.py script to the MAAS server and place it here: `/usr/lib/python3/dist-packages/provisioningserver/drivers/power/rpipc.py`
+
+Next tell maas how to init this driver. Edit: `/usr/lib/python3/dist-packages/provisioningserver/drivers/power/__init__.py`
+
+import the driver by adding `from provisioningserver.drivers.power.rpipc import RaspberryPiPowerControlDriver` and init the driver by adding `RaspberryPiPowerControlDriver(),` to power_drivers
+
+Add an entry to `JSON_POWER_TYPE_PARAMETERS` in `/usr/lib/python3/dist-packages/provisioningserver/power/schema.py
+```python
+    {
+        'name': 'rpipc',
+        'description': 'rpipc',
+        'fields': [
+            make_json_field('node_name', "Node Name"),
+            make_json_field('power_address', "Power Address"),
+        ],
+    }
+```
+
+Tell maas that this powertype supports querying powerstate (unlike wake-on-lan). Edit `/usr/lib/python3/dist-packages/provisioningserver/power/__init__.py` and add `rpipc` to `QUERY_POWER_TYPES`
+
+That's it `systemctl restart maas-rackd` and you should be able to select Raspberry Pi Power Control from the Power Control drop down on a server, assign one of the server names you put in the rpipc.json earlier and the REST api url like http://<host>:<port>/server For example: http://192.168.1.2:8000/server
+
+Have fun and feel free to put in a pull request to fix some of my code or this article on [my github](https://github.com/mechinn)
