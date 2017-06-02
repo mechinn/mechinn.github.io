@@ -7,12 +7,17 @@ categories: blog
 ###### This is for MAAS Version 2.1.5+bzr5596-0ubuntu1 (16.04.1)
 
 Over the past few years I have been playing with some old desktops at home and turning them into a [/r/homelab](https://www.reddit.com/r/homelab/).
+
 My problem is that I don't really want to go walk over to the servers every time I break something and need to do a hard reset on them.
-I started doing some research into it and learned that many enterprise servers have the ability to control their power remotely through some kind of API
-and it got me thinking if there was something I could do at home that didnt involve me buying an old enterprise server.
+
+I started doing some research into it and learned that many enterprise servers have the ability to control their power remotely through some kind of API and it got me thinking if there was something I could do at home that didnt involve me buying an old enterprise server.
+
 I stumbled upon this [blog post](https://insights.ubuntu.com/2015/09/23/pc-power-control-with-a-raspberry-pi-and-maas/) which gave pretty awesome instructions of how to control the pins on a motherboard using a relay and a raspberry pi so I followed the hardware instructions and whipped up a little python script similar to what they built for MAAS but using the official GPIO library.
+
 A year later I actually started playing with MAAS and went back to the article and tried following the instructionsof how to make MAAS play with the raspberry pi to have it automatically control the server power.
+
 The problem is that Canonical completely rewrote how MAAS does power control since that article was written, so the way they added their own custom driver wasnt valid anymore.
+
 I was already done with my circuit and my REST API so I figured why not go poking around in the MAAS source code and see where the built in power control drivers are and how they work now in version 2.1.5.
 Here is a tutorial of what you need to do to make MAAS work with a Raspberry Pi Power Controller.
 
@@ -22,9 +27,37 @@ First on the Raspberry Pi you'll need to setup my rpipc tool, I usually clone it
 
 Configure a rpipc.json which you can base off of the rpipc.json.example, remember the names you give your sets you'll need them once you're done and configuring your MAAS machines.
 
-You'll need gunicorn to run the server:api as a service
+You'll need gunicorn to run the server:api as a service, I wasn't exactly worried about security on this so I just setup a systemd service to run as root
 
-Next lets copy the /opt/rpipc/maas/rpipc.py script to the MAAS server and place it here: `/usr/lib/python3/dist-packages/provisioningserver/drivers/power/rpipc.py`
+`pip install gunicorn`
+
+`/etc/systemd/system/gunicorn.service`
+
+```systemd
+[Unit]
+Description=gunicorn daemon
+After=network.target
+
+[Service]
+PIDFile=/run/gunicorn/pid
+User=root
+Group=root
+RuntimeDirectory=gunicorn
+WorkingDirectory=/opt/rpipc
+ExecStart=/usr/local/bin/gunicorn --pid /run/gunicorn/pid --bind 0.0.0.0:8000 server:api
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
+```
+
+`systemctl enable gunicorn`
+
+`systemctl start gunicorn`
+
+Next lets copy the `/opt/rpipc/maas/rpipc.py` script to the MAAS server and place it here: `/usr/lib/python3/dist-packages/provisioningserver/drivers/power/rpipc.py`
 
 Next tell maas how to init this driver. Edit: `/usr/lib/python3/dist-packages/provisioningserver/drivers/power/__init__.py`
 
