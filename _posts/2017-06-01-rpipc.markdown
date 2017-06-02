@@ -59,9 +59,7 @@ WantedBy=multi-user.target
 
 Next lets copy the `/opt/rpipc/maas/rpipc.py` script to the MAAS server and place it here: `/usr/lib/python3/dist-packages/provisioningserver/drivers/power/rpipc.py`
 
-Next tell maas how to init this driver. Edit: `/usr/lib/python3/dist-packages/provisioningserver/drivers/power/__init__.py`
-
-import the driver by adding `from provisioningserver.drivers.power.rpipc import RaspberryPiPowerControlDriver` and init the driver by adding `RaspberryPiPowerControlDriver(),` to power_drivers
+Next tell maas how to init this driver. Edit: `/usr/lib/python3/dist-packages/provisioningserver/drivers/power/__init__.py` import the driver by adding `from provisioningserver.drivers.power.rpipc import RaspberryPiPowerControlDriver` and init the driver by adding `RaspberryPiPowerControlDriver(),` to power_drivers
 
 Add an entry to `JSON_POWER_TYPE_PARAMETERS` in `/usr/lib/python3/dist-packages/provisioningserver/power/schema.py
 ```python
