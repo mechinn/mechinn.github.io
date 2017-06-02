@@ -5,7 +5,7 @@ permalink: /projects/
 published: true
 ---
 
-# Current Projects:
+# Retired Projects:
 - [Our Alliance](https://github.com/frc869/our-alliance-android)
 
 # College Projects:
