@@ -10,7 +10,7 @@ published: true
 32 Phoenix Ave  
 Newark, DE 19702  
 [resume@mechinn.com](mailto:resume@mechinn.com)  
-1 (302) 750-8546  
+1 (609) 736-0414  
 [http://mechinn.com](http://mechinn.com)  
 
 Software Engineer with 4+ years of experience. Quick to adapt to new challenges and learn new technical skills as needed. Work produced with a high attention to detail and always trying to do the right thing. Always willing to assist surrounding coworkers through problems and brainstorm ideas. Continuing to develop interpersonal and leadership skills as early career progresses and new opportunities arrive.
